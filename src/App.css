@@ -1,0 +1,201 @@
+.App {
+  text-align: center;
+  background: #000;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+/* Tailwind Font Styling */
+.fontbold {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 14px; /* Adjust font size */
+}
+
+/* Custom Gradient Text Style with Tailwind CSS */
+.gradient-text {
+  background-image: linear-gradient(to right, #d35400, #000 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add underline effect using Tailwind and custom CSS */
+.gradient-text::before {
+  content: "";
+  background: #d35400;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effects */
+.gradient-text:hover {
+  background-position: 0;
+}
+
+.gradient-text:hover::before {
+  width: 100%;
+}
+
+/* Custom Gradient Text Style with Tailwind CSS */
+.gradient-text {
+  background-image: linear-gradient(to right, #d35400, #000 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add underline effect with gold shimmer */
+.gradient-text-white::before {
+  content: "";
+  background: linear-gradient(
+    90deg,
+    #b19646,
+    #f5efaa,
+    #b19646
+  ); /* Gold gradient */
+  background-size: 200% 100%;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effects */
+.gradient-text-white:hover {
+  background-position: 0;
+}
+
+.gradient-text-white:hover::before {
+  width: 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.gradient-text-white {
+  background-image: linear-gradient(
+    to right,
+    #b19646,
+    #fff 50%,
+    #fff 50%
+  ); /* Gold */
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.gradient-gold-text {
+  background-image: linear-gradient(90deg, #b19646, #f5efaa, #b19646);
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* Black background */
+  z-index: 9999;
+}
+
+.loading-screen {
+  text-align: center;
+}
+
+.loading-word-container {
+  position: relative;
+}
+
+.loading-word {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #d35400;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.loading-word.active {
+  opacity: 1;
+}
