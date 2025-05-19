@@ -59,18 +59,23 @@ const SkillsSection = () => {
   };
 
   const SkillCard = ({ title, skills, logos = null }) => (
-    <div className="bg-gray-800 bg-opacity-60 rounded-lg p-4 space-y-3 border border-gray-700">
-      <h3 className="text-white font-medium text-lg mb-4">{title}</h3>
-      <div className="space-y-2">
+    <div className="bg-blue-950 bg-opacity-50 rounded-lg p-6 space-y-4 border border-blue-900/40 min-w-[290px] flex flex-col justify-between h-full">
+      {/* Title */}
+      <h3 className="text-white font-semibold text-lg">{title}</h3>
+
+      {/* Skills List */}
+      <div className="space-y-3">
         {skills.map((skill, index) => (
-          <div key={index} className="flex items-center text-gray-300 text-sm">
-            <span className="mr-2 text-gray-500">→</span>
+          <div key={index} className="flex items-center text-gray-200 text-lg">
+            <span className="mr-2 text-blue-500">→</span>
             {skill}
           </div>
         ))}
       </div>
+
+      {/* Logos (aligned to bottom right) */}
       {logos && (
-        <div className="mt-4 flex flex-wrap gap-3">
+        <div className="mt-auto pt-4 flex justify-end flex-wrap gap-4">
           {logos.map((logo, index) => (
             <div key={index} className="flex items-center">
               {logo}
@@ -84,70 +89,90 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-[#000] from-blue-900 via-blue-800 to-blue-700 text-white px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-20"
+      className="min-h-screen bg-[#000] from-blue-950 via-blue-950 to-black text-white px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-20 lg:h-[100vh] flex items-center"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto container">
         {/* Header */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 text-left">
+        <h1 className="text-4xl sm:text-5xl font-semibold mb-16 text-left text-white">
           Skills
         </h1>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Programming */}
-          <SkillCard title="Programming" skills={skillsData.programming} />
+        <div className="flex  ">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  ">
+            {/* Programming */}
+            <div className="grid grid-cols-1 gap-4 ">
+              <div className="">
+                <SkillCard
+                  title="Programming"
+                  skills={skillsData.programming}
+                />
+              </div>
+              <div>
+                <SkillCard title="Language" skills={skillsData.language} />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                {/* Data Analysis */}
+                <SkillCard
+                  title="Data Analysis"
+                  skills={skillsData.dataAnalysis}
+                  logos={[
+                    <div key="excel-tableau" className="flex flex-wrap gap-4">
+                      <img src={Excel} alt="Excel" className="h-8" />
+                      <img src={Tableau} alt="Tableau" className="h-6" />
+                      <img
+                        key="powerbi"
+                        src={PowerBI}
+                        alt="Power BI"
+                        className="h-8"
+                      />
+                    </div>,
+                  ]}
+                />
+              </div>
 
-          {/* Data Analysis */}
-          <SkillCard
-            title="Data Analysis"
-            skills={skillsData.dataAnalysis}
-            logos={[
-              <div className="flex items-center gap-2">
-                <img src={Excel} alt="Excel" className="h-7" />
-                <img src={Tableau} alt="Tableau" className="h-7" />
-              </div>,
-              <img src={PowerBI} alt="Power BI" className="h-7" />,
-            ]}
-          />
+              {/* Language */}
 
-          {/* Big Data Engineering */}
-          <SkillCard
-            title="Big Data Engineering"
-            skills={skillsData.bigDataEngineering}
-            logos={[
-              <div className="flex flex-wrap gap-2">
-                <img src={databricks} alt="Databricks" className="h-7" />
-                <img src={dbt} alt="dbt" className="h-7" />
-                <img src={Hadoop} alt="Hadoop" className="h-7" />
-                <img src={Airflow} alt="Airflow" className="h-7" />
-                <img src={docker} alt="Docker" className="h-7" />
-                <img src={Github} alt="GitHub" className="h-7" />
-                <img src={Kafka} alt="Kafka" className="h-7" />
-              </div>,
-            ]}
-          />
+              {/* Data Science */}
+              <SkillCard title="Data Science" skills={skillsData.dataScience} />
+            </div>
 
-          {/* Cloud & Databases */}
-          <SkillCard
-            title="Cloud & Databases"
-            skills={skillsData.cloudDatabases}
-            logos={[
-              <div className="flex flex-wrap gap-2">
-                <img src={Azure} alt="Azure" className="h-7" />
-                <img src={MongoDB} alt="MongoDB" className="h-7" />
-                <img src={Snowflake} alt="Snowflake" className="h-7" />
-                <img src={Alteryx} alt="Alteryx" className="h-7" />
-                <img src={Google_cloud} alt="Google Cloud" className="h-7" />
-                <img src={AWS} alt="AWS" className="h-7" />
-              </div>,
-            ]}
-          />
+            {/* Big Data Engineering */}
 
-          {/* Data Science */}
-          <SkillCard title="Data Science" skills={skillsData.dataScience} />
+            <SkillCard
+              title="Big Data Engineering"
+              skills={skillsData.bigDataEngineering}
+              logos={[
+                <div key="big-data-tools" className="flex flex-wrap gap-4">
+                  <img src={databricks} alt="Databricks" className="h-8" />
+                  <img src={dbt} alt="dbt" className="h-8" />
+                  <img src={Hadoop} alt="Hadoop" className="h-8" />
+                  <img src={Airflow} alt="Airflow" className="h-8" />
+                  <img src={docker} alt="Docker" className="h-8" />
+                  <img src={Github} alt="GitHub" className="h-6" />
+                  <img src={Kafka} alt="Kafka" className="h-8" />
+                </div>,
+              ]}
+            />
 
-          {/* Language */}
-          <SkillCard title="Language" skills={skillsData.language} />
+            {/* Cloud & Databases */}
+            <SkillCard
+              title="Cloud & Databases"
+              skills={skillsData.cloudDatabases}
+              logos={[
+                <div key="cloud-db-tools" className="flex flex-wrap gap-4">
+                  <img src={Azure} alt="Azure" className="h-8" />
+                  <img src={MongoDB} alt="MongoDB" className="h-8" />
+                  <img src={Snowflake} alt="Snowflake" className="h-8" />
+                  <img src={Alteryx} alt="Alteryx" className="h-8" />
+                  <img src={Google_cloud} alt="Google Cloud" className="h-8" />
+                  <img src={AWS} alt="AWS" className="h-8" />
+                </div>,
+              ]}
+            />
+          </div>
         </div>
       </div>
     </section>

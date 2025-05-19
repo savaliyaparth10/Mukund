@@ -1,23 +1,26 @@
 import React from "react";
 import { Mail, Phone, Linkedin, Github, Hash } from "lucide-react";
 import profile_photo from "../assets/image_resources/profile_photo.jpg";
+import git_icon from "../assets/image_resources/git_icon.svg";
+import Tableau_icon from "../assets/image_resources/Tableau_icon.svg";
+import linkedin_icon from "../assets/image_resources/linkedin_icon.svg";
 
 const ContactSection = () => {
   return (
     <div
-      id="about"
+      id="contact"
       className="bg-[#000] from-blue-900 via-blue-950 to-black min-h-screen flex flex-col"
     >
       {/* Main Content */}
       <div className="flex-1 flex items-center justify-between px-6 lg:px-12 py-16">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text and Buttons */}
-          <div className="text-white space-y-8">
-            <div>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-4 leading-tight">
+          <div className=" text-white space-y-8">
+            <div className="">
+              <h1 className="text-4xl lg:text-6xl font-semibold mb-4 leading-tight w-[1000px]">
                 Feel Free to Reach Out
               </h1>
-              <p className="text-gray-300 text-lg">
+              <p className="text-[#999999] text-3xl font-light">
                 Let's start a productive conversation
               </p>
             </div>
@@ -44,27 +47,33 @@ const ContactSection = () => {
               />
 
               {/* Social Media Icons */}
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
+              <div className=" absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
                 <a
-                  href="#"
-                  className="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition-colors duration-300"
+                  href="https://www.linkedin.com/in/your-profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" p-1 rounded-full  transition-colors duration-300"
                   aria-label="LinkedIn profile"
                 >
-                  <Linkedin size={24} className="text-white" />
+                  <img src={linkedin_icon} alt="LinkedIn" className="w-12 h-12" />
                 </a>
                 <a
-                  href="#"
-                  className="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition-colors duration-300"
+                  href="https://github.com/your-username"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1 rounded-full  transition-colors duration-300"
                   aria-label="GitHub profile"
                 >
-                  <Github size={24} className="text-white" />
+                  <img src={git_icon} alt="GitHub" className="w-12 h-12" />
                 </a>
                 <a
-                  href="#"
-                  className="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition-colors duration-300"
-                  aria-label="Other social media"
+                  href="https://public.tableau.com/app/profile/your-profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" p-1 rounded-full  transition-colors duration-300"
+                  aria-label="Tableau profile"
                 >
-                  <Hash size={24} className="text-white" />
+                  <img src={Tableau_icon} alt="Tableau" className="w-12 h-12" />
                 </a>
               </div>
             </div>

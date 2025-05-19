@@ -13,6 +13,15 @@
   }
 }
 
+
+@font-face {
+  font-family: 'GT-Walsheim-Bold';
+  src: url('/src//assets/fonts/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

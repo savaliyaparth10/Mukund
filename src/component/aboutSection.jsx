@@ -4,22 +4,22 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="bg-[#000] from-blue-900 to-black text-white py-16 px-6 lg:px-12"
+      className="bg-[#000] from-blue-900 to-black text-white py-16 px-6 lg:px-12 lg:h-[100vh] flex items-center"
       aria-label="About me section"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Main Content */}
           <div className="space-y-8">
             <h1 className="text-4xl lg:text-5xl font-bold">About me</h1>
 
-            <div className="space-y-6 text-lg leading-relaxed">
+            <div className="space-y-6 text-xl leading-relaxed">
               <p>
                 " As a passionate data professional, I have 1.5+ years of
                 experience in{" "}
                 <a
                   href="#"
-                  className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  className="text-[#7A7A79] hover:text-blue-200 underline transition-colors duration-300"
                   aria-label="Learn more about large-scale data processing"
                 >
                   large-scale data processing
@@ -27,7 +27,7 @@ const AboutSection = () => {
                 and{" "}
                 <a
                   href="#"
-                  className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  className="text-[#7A7A79] hover:text-blue-200 underline transition-colors duration-300"
                   aria-label="Learn more about real-time analytics"
                 >
                   real-time analytics
@@ -35,7 +35,7 @@ const AboutSection = () => {
                 . My expertise spans the entire{" "}
                 <a
                   href="#"
-                  className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  className="text-[#7A7A79] hover:text-blue-200 underline transition-colors duration-300"
                   aria-label="Learn more about data lifecycle"
                 >
                   data lifecycle
@@ -43,7 +43,7 @@ const AboutSection = () => {
                 , from{" "}
                 <a
                   href="#"
-                  className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  className="text-[#7A7A79] hover:text-blue-200 underline transition-colors duration-300"
                   aria-label="Learn more about infrastructure design"
                 >
                   infrastructure design
@@ -55,7 +55,7 @@ const AboutSection = () => {
                 With a strong academic foundation in a Master of Web and{" "}
                 <a
                   href="#"
-                  className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  className="text-[#7A7A79] hover:text-blue-200 underline transition-colors duration-300"
                   aria-label="Learn more about Data Science"
                 >
                   Data Science
@@ -63,7 +63,7 @@ const AboutSection = () => {
                 and hands-on{" "}
                 <a
                   href="#"
-                  className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  className="text-[#7A7A79] hover:text-blue-200 underline transition-colors duration-300"
                   aria-label="Learn more about industry experience"
                 >
                   industry experience
@@ -71,7 +71,7 @@ const AboutSection = () => {
                 , I am driven to deliver end-to-end{" "}
                 <a
                   href="#"
-                  className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  className="text-[#7A7A79] hover:text-blue-200 underline transition-colors duration-300"
                   aria-label="Learn more about data solutions"
                 >
                   data solutions
@@ -90,11 +90,11 @@ const AboutSection = () => {
           <div className="space-y-8">
             {/* Education Section */}
             <article>
-              <h2 className="text-xl font-semibold mb-4">Education</h2>
-              <div className="space-y-4">
+              <h2 className="text-lg font-semibold mb-4">Education</h2>
+              <div className="space-y-4 text-xl">
                 <div className="flex items-start gap-3">
                   <span
-                    className="text-blue-300 mt-1 flex-shrink-0"
+                    className="text-[#7A7A79] mt-1 flex-shrink-0"
                     aria-hidden="true"
                   >
                     →
@@ -108,7 +108,7 @@ const AboutSection = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <span
-                    className="text-blue-300 mt-1 flex-shrink-0"
+                    className="text-[#7A7A79] mt-1 flex-shrink-0"
                     aria-hidden="true"
                   >
                     →
@@ -130,19 +130,19 @@ const AboutSection = () => {
               <h2 className="text-xl font-semibold mb-4">Industry Knowledge</h2>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-blue-300" aria-hidden="true">
+                  <span className="text-[#7A7A79]" aria-hidden="true">
                     →
                   </span>
                   <span>Automotive & Manufacturing</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-blue-300" aria-hidden="true">
+                  <span className="text-[#7A7A79]" aria-hidden="true">
                     →
                   </span>
                   <span>Energy & Utilities</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-blue-300" aria-hidden="true">
+                  <span className="text-[#7A7A79]" aria-hidden="true">
                     →
                   </span>
                   <span>Retail & E-commerce</span>
@@ -158,19 +158,19 @@ const AboutSection = () => {
                 </h2>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-blue-300" aria-hidden="true">
+                    <span className="text-[#7A7A79]" aria-hidden="true">
                       →
                     </span>
                     <span>Mercedes-Benz</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-blue-300" aria-hidden="true">
+                    <span className="text-[#7A7A79]" aria-hidden="true">
                       →
                     </span>
                     <span>Zeonlabs</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-blue-300" aria-hidden="true">
+                    <span className="text-[#7A7A79]" aria-hidden="true">
                       →
                     </span>
                     <span>Planet X</span>
@@ -184,36 +184,36 @@ const AboutSection = () => {
                 </h2>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-blue-300" aria-hidden="true">
+                    <span className="text-[#7A7A79]" aria-hidden="true">
                       →
                     </span>
                     <a
                       href="#"
-                      className="hover:text-blue-300 transition-colors duration-300"
+                      className="hover:text-[#7A7A79] transition-colors duration-300"
                       aria-label="Visit my Tableau profile"
                     >
                       Tableau
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-blue-300" aria-hidden="true">
+                    <span className="text-[#7A7A79]" aria-hidden="true">
                       →
                     </span>
                     <a
                       href="#"
-                      className="hover:text-blue-300 transition-colors duration-300"
+                      className="hover:text-[#7A7A79] transition-colors duration-300"
                       aria-label="Visit my LinkedIn profile"
                     >
                       LinkedIn
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-blue-300" aria-hidden="true">
+                    <span className="text-[#7A7A79]" aria-hidden="true">
                       →
                     </span>
                     <a
                       href="#"
-                      className="hover:text-blue-300 transition-colors duration-300"
+                      className="hover:text-[#7A7A79] transition-colors duration-300"
                       aria-label="Visit my GitHub profile"
                     >
                       GitHub

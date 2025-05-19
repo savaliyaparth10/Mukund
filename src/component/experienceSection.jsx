@@ -113,7 +113,7 @@ const ExperienceSection = ({ titelHide, theme }) => {
       {/* Experience Header */}
       <div className="max-w-7xl mx-auto">
         {!titelHide && (
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-16 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-16 text-left">
             Experience
           </h1>
         )}
@@ -140,29 +140,13 @@ const ExperienceSection = ({ titelHide, theme }) => {
             </a>
           </div>
 
-          {/* Statistics */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {statistics.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold mb-2">
-                  {stat.value}
-                </div>
-                <div
-                  className={`text-sm ${currentTheme.accent} whitespace-pre-line`}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="flex ">
             {/* Left Column - Details */}
-            <div className="space-y-8 ">
+            <div className="space-y-8 w-[30%]">
               <div>
                 <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  <User className="w-5 h-5" />
+                  {/* <User className="w-5 h-5" /> */}
                   Position
                 </h3>
                 <p className={`${currentTheme.accent} text-lg`}>
@@ -173,7 +157,7 @@ const ExperienceSection = ({ titelHide, theme }) => {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  <MapPin className="w-5 h-5" />
+                  {/* <MapPin className="w-5 h-5" /> */}
                   Location
                 </h3>
                 <p className={`${currentTheme.accent} text-lg`}>
@@ -183,7 +167,7 @@ const ExperienceSection = ({ titelHide, theme }) => {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  <Calendar className="w-5 h-5" />
+                  {/* <Calendar className="w-5 h-5" /> */}
                   Timeline
                 </h3>
                 <p className={`${currentTheme.accent} text-lg`}>
@@ -193,24 +177,16 @@ const ExperienceSection = ({ titelHide, theme }) => {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  <FileText className="w-5 h-5" />
+                  {/* <FileText className="w-5 h-5" /> */}
                   Key Point
                 </h3>
-                <p
-                  className={`${currentTheme.highlight} text-lg underline decoration-dotted`}
-                >
-                  Research publication
-                </p>
-                <p
-                  className={`${currentTheme.highlight} text-lg underline decoration-dotted`}
-                >
-                  in process
-                </p>
+                <p className={`text-lg underline `}>Research publication</p>
+                <p className={`text-lg underline `}>in process</p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  <ExternalLink className="w-5 h-5" />
+                  {/* <ExternalLink className="w-5 h-5" /> */}
                   Link
                 </h3>
                 <button
@@ -222,23 +198,74 @@ const ExperienceSection = ({ titelHide, theme }) => {
             </div>
 
             {/* Right Column - Achievements */}
-            <div className="space-y-4 ">
+            <div className="space-y-4 w-full">
+              {/* Statistics */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                {statistics.map((stat, index) => (
+                  <div key={index} className="text-start">
+                    <div className="text-3xl   lg:text-4xl  mb-2">
+                      {stat.value}
+                    </div>
+                    <div
+                      className={`text-lg ${currentTheme.accent} whitespace-pre-line`}
+                    >
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
               {achievements.map((achievement, index) => (
-                <div
-                  key={index}
-                  className="flex  items-start gap-4 p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300"
-                >
-                  <div className="text-white flex-shrink-0 mt-1">
+                <div key={index} className="flex items-start gap-4  ">
+                  {/* Icon */}
+                  <div className="text-white flex-shrink-0 mt-1 text-lg">
                     {achievement.icon}
                   </div>
-                  <div className="flex">
-                    <h4 className="font-semibold text-white mb-1">
-                      {achievement.title}
-                    </h4>
-                    <p
-                      className={`${currentTheme.accent} text-sm leading-relaxed`}
-                    >
-                      {achievement.description}
+
+                    <h4 className="font-semibold text-lg mb-1">{achievement.title}</h4>
+                  {/* Text Container */}
+                  <div className="flex flex-col text-white text-sm leading-relaxed">
+                    {/* Title with bold and some margin */}
+
+                    {/* Description with white text, and inline bold or underlined parts */}
+                    <p className="text-white opacity-60  text-lg">
+                      {/* Use spans inside description if you want parts bold or underlined */}
+                      {achievement.description.split(" ").map((word, i) => {
+                        // Example: make numbers or % bold and underlined with dotted line
+                        if (/\d+[%]*/.test(word)) {
+                          return (
+                            <span
+                              key={i}
+                              className="font-bold underline decoration-dotted decoration-white"
+                            >
+                              {word + " "}
+                            </span>
+                          );
+                        }
+                        // Example: keywords bold
+                        if (
+                          [
+                            "Bigdata",
+                            "Data",
+                            "Database",
+                            "architected",
+                            "pipelines",
+                            "Governance",
+                            "Optimised",
+                            "Coding",
+                            "GitHub",
+                            "Docker",
+                          ].some((keyword) =>
+                            word.toLowerCase().includes(keyword.toLowerCase())
+                          )
+                        ) {
+                          return (
+                            <span key={i} className="font-semibold">
+                              {word + " "}
+                            </span>
+                          );
+                        }
+                        return word + " ";
+                      })}
                     </p>
                   </div>
                 </div>

@@ -86,7 +86,11 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300  `}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "backdrop-blur-md bg-white/10 border-b border-white/20 shadow-sm"
+          : ""
+      }`}
       role="navigation"
       aria-label="Main navigation"
     >

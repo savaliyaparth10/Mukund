@@ -103,14 +103,14 @@ const ProjectsShowcase = () => {
   ];
 
   return (
-    <div id="projects">
+    <div id="projects"  > 
       <style>{swiperStyles}</style>
       <section
-        className="bg-black text-white py-16 px-6 lg:px-12"
+        className="bg-black text-white py-16 px-6 lg:px-12  h-[100vh] flex items-center "
         role="main"
         aria-label="Projects Showcase"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto  ">
           {/* Header */}
           <header className="flex items-center justify-between mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold">Projects</h1>
